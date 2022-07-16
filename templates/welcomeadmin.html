@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Admin Panel</a>
+          <div class="cola" id="navbarSupportedContent">
+            
+            <form class="d-flex">
+              <button class="btn btn-primary" type="submit"><a href="/logoutadmin" style="text-decoration: none;color:white;"> Logout</a></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+    <h1>Welcome Admin !!</h1>
+    <h2>These are the current Users.</h2>
+    
+
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            
+            <th scope="col">Users</th>
+            <th scope="col">DELETE</th>
+            <th scope="col">EDIT/UPDATE</th>
+                               
+        </tr>
+        </thead>
+        <tbody>
+       
+        
+           {{range $index,$value := .users}}
+           {{if .}}
+          <tr>
+            <th scope="row">{{$index}}</th>
+            <td>{{.}}</td>
+            <td> <a class="btn btn-danger" href="/delete/{{.}}">DELETE</a></td>            
+             <td>
+                 <form action="/update/{{.}}" method="post">
+             <input type="text" name="updatedata" value="{{.}}">   
+            <button type="submit"> Update</button>
+            </form></td>           
+        </tr>{{end}}
+          {{end}}
+
+      
+         
+         
+        </tbody>
+      </table>
+
+      <div class="container">
+      <div class="row">
+          <h2>Create a New User</h2>
+        <form action="/create" method="post">
+        <div class="col">
+  
+<input type="text" name="username" class="form-control" placeholder="username" aria-label="username" required>
+</div>
+<br>
+<div class="col">
+<input type="password" name="password" class="form-control" placeholder="password" aria-label="password" required>
+</div><br>
+<button class="btn btn-primary" type="submit"><a style="text-decoration: none;color:white;"> Create</a></button>
+<br><br></form>
+</div>
+</div>
+
+
+</body>
+</html>

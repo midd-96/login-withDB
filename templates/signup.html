@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: rgb(228, 229, 247);
+        }
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(101, 101, 101, 0.6);
+            border-radius: 10px;
+        }
+
+        .login-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: rgb(33, 32, 32);
+            text-align: center;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: rgb(31, 31, 31);
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid rgb(99, 97, 97);
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: rgb(44, 43, 43);
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #000000;
+            font-size: 12px;
+        }
+
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #121212;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px
+        }
+
+       
+        @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+
+        .context {
+            width: 100%;
+            position: absolute;
+            top: 50vh;
+        }
+
+        .context h1 {
+            text-align: center;
+            color: rgb(1, 1, 1);
+            font-size: 50px;
+            margin: -267px;
+        }
+
+       
+
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #5b5b5e;
+            background: rgb(228, 229, 247);
+            overflow-x: hidden;
+        }
+
+        a {
+            cursor: pointer;
+            transition: all 200ms linear;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .link {
+            color: #000000;
+        }
+
+        .link:hover {
+            color: #0e0e0e;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        h4 {
+            font-weight: 600;
+        }
+
+        h6 span {
+            padding: 0 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            display: block;
+        }
+
+        .full-height {
+            min-height: 100vh;
+        }
+
+        [type="checkbox"]:checked,
+        [type="checkbox"]:not(:checked) {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .checkbox:checked+label,
+        .checkbox:not(:checked)+label {
+            position: relative;
+            display: block;
+            text-align: center;
+            width: 60px;
+            height: 16px;
+            border-radius: 8px;
+            padding: 0;
+            margin: 10px auto;
+            cursor: pointer;
+            background-color: #3f3f3f;
+        }
+
+        .checkbox:checked+label:before,
+        .checkbox:not(:checked)+label:before {
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: #464545;
+            background-color: #1c1c1c;
+            font-family: 'unicons';
+            content: '\eb4f';
+            z-index: 20;
+            top: -10px;
+            left: -10px;
+            line-height: 36px;
+            text-align: center;
+            font-size: 24px;
+            transition: all 0.5s ease;
+        }
+
+        /* .checkbox:checked + label:before {
+  transform: translateX(44px) rotate(-270deg);
+} */
+
+        .card-3d-wrap {
+            position: relative;
+            width: 440px;
+            max-width: 100%;
+            height: 400px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            perspective: 800px;
+            margin-top: 60px;
+        }
+
+        .card-3d-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            transition: all 600ms ease-out;
+        }
+
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffffd9;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: 300%;
+            position: absolute;
+            border-radius: 6px;
+            left: 0;
+            top: 0;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .checkbox:checked~.card-3d-wrap .card-3d-wrapper {
+            transform: rotateY(180deg);
+        }
+
+        .center-wrap {
+            position: absolute;
+            width: 100%;
+            padding: 0 35px;
+            top: 50%;
+            left: 0;
+            transform: translate3d(0, -50%, 35px) perspective(100px);
+            z-index: 20;
+            display: block;
+        }
+
+        .form-group {
+            position: relative;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-style {
+            padding: 13px 20px;
+            padding-left: 55px;
+            height: 48px;
+            width: 100%;
+            font-weight: 500;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.5px;
+            outline: none;
+            color: #101010;
+            background-color: #fffbfb;
+            border: none;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+            box-shadow: 0 4px 8px 0 rgba(135, 133, 133, 0.2);
+        }
+
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: rgb(117, 117, 117) !important;
+            opacity: 1;
+            /* Firefox */
+        }
+
+        .form-style:focus,
+        .form-style:active {
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 8px 0 rgba(201, 194, 194, 0.2);
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 0;
+            left: 18px;
+            height: 48px;
+            font-size: 24px;
+            line-height: 48px;
+            text-align: left;
+            color: #3d3b3b;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input:-ms-input-placeholder {
+            color: #4c4c4c;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input::-moz-placeholder {
+            color: #c4c3ca;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input:-moz-placeholder {
+            color: #c4c3ca;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input::-webkit-input-placeholder {
+            color: #c4c3ca;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input:focus:-ms-input-placeholder {
+            opacity: 0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input:focus::-moz-placeholder {
+            opacity: 0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input:focus:-moz-placeholder {
+            opacity: 0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .form-group input:focus::-webkit-input-placeholder {
+            opacity: 0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+
+        .btn:active,
+        .btn:focus {
+            background-color: #000000;
+            color: #444141;
+            box-shadow: 0 8px 24px 0 rgba(125, 123, 123, 0.2);
+        }
+
+
+        .logo {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: block;
+            z-index: 100;
+            transition: all 250ms linear;
+        }
+
+        .logo img {
+            height: 26px;
+            width: auto;
+            display: block;
+        }
+
+        .siup {
+            font-size: larger;
+            color: #424242;
+        }
+
+        .adminredirect {
+            text-decoration: none;
+            color: rgb(55, 53, 53);
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+    <center>
+
+
+
+
+        <div class="section">
+            <div class="container">
+                <div class="row full-height justify-content-center">
+                    <div class="col-12 text-center align-self-center py-5">
+                        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                            <h6 class="top3 mb-0 pb-3"><span>Sign Up</span>|<span><a class="adminredirect"
+                                        href="/admin">
+                                        Admin</a></span>|<span><a class="adminredirect" href="/login"> Login</a></span>
+                            </h6>
+
+                            <label for="reg-log"></label>
+                            <div class="card-3d-wrap mx-auto">
+                                <div class="card-3d-wrapper">
+                                    <div class="card-front">
+                                        <div class="center-wrap">
+                                            <div class="section text-center">
+
+                                                <div class="center-wrap">
+                                                    <div class="section text-center"><br>
+                                                        <br>
+                                                        <h4 class="siup mb-4 pb-3">Sign Up</h4>
+                                                        
+                                                        <form action="/signup" method="post">
+                                                        <!-- <div class="form-group">
+                                                            <input type="text" name="name" class="form-style"
+                                                                placeholder="Your Full Name" id="logname">
+                                                                
+                                                            <i class="input-icon uil uil-user"></i>
+                                                        </div> -->
+
+    
+                                                        <div class="form-group mt-2">
+                                                            <input type="text" name="username" class="form-style"
+                                                                placeholder="Username" id="logemail">
+                                                                
+                                                            <i class="input-icon uil uil-at"></i>
+                                                        </div>
+                                                        <div class="form-group mt-2">
+                                                            <input type="password" name="password" class="form-style"
+                                                                placeholder="Your Password" id="logpass"
+                                                                autocomplete="off">
+                                                            <i class="input-icon uil uil-lock-alt"></i>
+                                                        </div><br>
+                                                        <input type="submit" class="submitdata btn btn-dark">
+                                                        <br>
+                                                        </form>
+                                                        <div class="container"> <br>
+                                                            <p class="alreadyuser ">Already have an Account?Click <a
+                                                                    href="/login">here</a> for login
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    </center>
+
+
+
+
+</body>
+
+</html>
